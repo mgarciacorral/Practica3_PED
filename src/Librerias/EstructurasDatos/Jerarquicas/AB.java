@@ -26,6 +26,24 @@ public class AB<E> implements I_AB<E>
         return this.raiz;
     }
 
+    public void setRaiz(NodoAB<E> raiz)
+    {
+        this.raiz = raiz;
+    }
+
+    public void insertar(E elem)
+    {
+        NodoAB<E> nodo = new NodoAB<E>(elem);
+        if (this.raiz == null)
+        {
+            this.raiz = nodo;
+        }
+        else
+        {
+            this.raiz.insertar(nodo);
+        }
+    }
+
     public void insertar(E elem,  E padre, char lugar)
     {
         NodoAB<E> nodo = new NodoAB<E>(elem);

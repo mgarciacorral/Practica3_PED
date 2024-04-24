@@ -75,6 +75,22 @@ public class NodoAB<E>
         return this.dato.toString();
     }
 
+    public void insertar(NodoAB<E> nodo)
+    {
+        if (this.izq == null)
+        {
+            this.izq = nodo;
+        }
+        else if (this.der == null)
+        {
+            this.der = nodo;
+        }
+        else
+        {
+            this.izq.insertar(nodo);
+        }
+    }
+
     public int numDescendientes()
     {
         int num = 0;

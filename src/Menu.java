@@ -17,7 +17,7 @@ public class Menu {
         System.out.println("\tMENU AB enteros");
         System.out.println("1. Crear arbol");
         System.out.println("2. Listado de claves en InOrden");
-        System.out.println("3. Listado de claves en InOrden Converson");
+        System.out.println("3. Listado de claves en InOrden Converso");
         System.out.println("4. Listado de claves en PreOrden");
         System.out.println("5. Listado de claves en PostOrden");
         System.out.println("6. Comprobar suma");
@@ -32,19 +32,29 @@ public class Menu {
 
     public void bucleMenu(){
         Scanner scanner = new Scanner(System.in);
+        int opcion;
         boolean salir = false;
         while (!salir){
             mostrarMenu();
             System.out.print("Introduce una opcion: ");
-            int opcion = scanner.nextInt();
+
+            try{
+            opcion = scanner.nextInt();
+            }catch (Exception e){
+                System.out.println("Introduce un numero valido");
+                continue;
+            }
 
             switch(opcion){
                 case 1:
                     arboles = crearArboles();
+                    System.out.println("Arboles creados con éxito");
+                    pause();
                     break;
                 case 2:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -52,6 +62,8 @@ public class Menu {
                 case 3:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
+
                     }else{
 
                     }
@@ -59,6 +71,7 @@ public class Menu {
                 case 4:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -66,6 +79,7 @@ public class Menu {
                 case 5:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -73,6 +87,7 @@ public class Menu {
                 case 6://HASTA AQUI MATI
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -80,13 +95,16 @@ public class Menu {
                 case 7:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
-
+                        comprobarClavePequeña(seleccionarArbol());
+                        pause();
                     }
                     break;
                 case 8:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -96,6 +114,7 @@ public class Menu {
                 case 9:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -103,6 +122,7 @@ public class Menu {
                 case 10:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -110,6 +130,7 @@ public class Menu {
                 case 11:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
@@ -117,22 +138,32 @@ public class Menu {
                 case 12:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
+                        pause();
                     }else{
 
                     }
                     break;
                 case 0:
                     salir = true;
+                    System.out.println("Gracias por utilizar nuestro TAD ABEnteros");
+                    pause();
                     break;
 
                 default:
                     System.out.println("Opcion no valida");
+                    pause();
+
                     break;
             }
         }
 
     }
 
+    public void pause() {
+        System.out.println("Presiona Enter para continuar...");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
 
     public AB seleccionarArbol(){
         Scanner scanner = new Scanner(System.in);
@@ -146,8 +177,7 @@ public class Menu {
 
     public static AB<Integer>[] crearArboles(){
         AB<Integer> arbol1 = new AB<Integer>();
-        arbol1.setRaiz(new NodoAB<Integer>(2, new NodoAB<Integer>(6, new NodoAB<Integer>(9), new NodoAB<Integer>(7)), new NodoAB<Integer>(5, null, new NodoAB<Integer>(8))));
-        AB<Integer> arbol2 = new AB<Integer>();
+        arbol1.setRaiz(new NodoAB<Integer>(2, new NodoAB<Integer>(6, new NodoAB<Integer>(9), new NodoAB<Integer>(7)), new NodoAB<Integer>(5, null, new NodoAB<Integer>(8))));        AB<Integer> arbol2 = new AB<Integer>();
         arbol2.setRaiz(new NodoAB<Integer>(13, new NodoAB<Integer>(12, new NodoAB<Integer>(8), new NodoAB<Integer>(4, new NodoAB<Integer>(2), new NodoAB<Integer>(2))), new NodoAB<Integer>(34, new NodoAB<Integer>(-3, new NodoAB<Integer>(0), null), new NodoAB<Integer>(-3))));
         return new AB[]{arbol1, arbol2};
     }
@@ -158,6 +188,16 @@ public class Menu {
         }else{
             return false;
         }
+    }
+
+
+    public void comprobarClavePequeña(AB arbol){
+       if(arbol.getRaiz().comprobarClavePequeña(arbol.getRaiz())){
+              System.out.println("El arbol cumple la condicion de clave pequeña");
+        }else{
+                System.out.println("El arbol no cumple la condicion de clave pequeña");
+        }
+
     }
 
 }

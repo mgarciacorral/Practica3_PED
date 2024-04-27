@@ -93,5 +93,33 @@ public class AB<E> implements I_AB<E>
         return raiz.buscarElemento(elem) != null;
     }
 
+    public void vaciarModo2(NodoAB<E> padre, NodoAB<E> nodo) {
+        if (nodo != null) {
+            if (nodo.getIzq() != null){
+                vaciarModo2(nodo, nodo.getIzq());
+            }
+            if (nodo.getDer() != null) {
+                vaciarModo2(nodo, nodo.getDer());
+            }
+            if (padre != null) {
+                if (padre.getIzq() == nodo) {
+                    padre.setIzq(null);
+                } else if (padre.getDer() == nodo) {
+                    padre.setDer(null);
+                }
+            } else{
+                setRaiz(null);
+            }
+        }
+    }
+
+    public void mostrarArbol(NodoAB<E> nodo){
+        if(nodo != null){
+            System.out.println(nodo.getDato());
+            mostrarArbol(nodo.getIzq());
+            mostrarArbol(nodo.getDer());
+        }
+
+    }
 
 }

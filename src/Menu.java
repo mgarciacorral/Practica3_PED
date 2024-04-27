@@ -93,12 +93,14 @@ public class Menu {
                     }
                     break;
                 case 7:
-                    if(arbolVacio()){
-                        System.out.println("No hay arboles creados");
+                    try{
+                    AB arbol = seleccionarArbol();
+                    comprobarClavePequeña(arbol);
+                    pause();
+                    }catch (Exception e){
+                        System.out.println("El arbol no existe");
                         pause();
-                    }else{
-                        comprobarClavePequeña(seleccionarArbol());
-                        pause();
+                        continue;
                     }
                     break;
                 case 8:
@@ -106,17 +108,27 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-
+                        AB arbol = seleccionarArbol();
+                        arbol.vaciar();
+                        if(arbol.esVacio()){
+                            System.out.println("Arbol vaciado con exito");
+                            pause();
+                        }else{
+                            System.out.println("Error al vaciar el arbol");
+                            pause();
+                        }
+                        break;
                     }
-                    AB arbol = seleccionarArbol();
-                    arbol.vaciar();
-                    break;
-                case 9:
-                    if(arbolVacio()){
-                        System.out.println("No hay arboles creados");
-                        pause();
-                    }else{
 
+                case 9:
+                    try{
+                        AB arbol = seleccionarArbol();
+                        vaciarArbolModo2(arbol);
+                        pause();
+                    }catch (Exception e){
+                        System.out.println("El arbol no existe");
+                        pause();
+                        continue;
                     }
                     break;
                 case 10:
@@ -198,6 +210,15 @@ public class Menu {
                 System.out.println("El arbol no cumple la condicion de clave pequeña");
         }
 
+    }
+
+    public void vaciarArbolModo2(AB arbol){
+        arbol.vaciarModo2(null, arbol.getRaiz());
+        if(arbol.esVacio()){
+            System.out.println("Arbol vaciado con exito");
+        }else{
+            System.out.println("Error al vaciar el arbol");
+        }
     }
 
 }

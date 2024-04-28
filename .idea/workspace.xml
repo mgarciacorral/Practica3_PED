@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Opcion 10 hecha más método pertenecePorDato (comprueba si un elemento pertenece por su dato a partir de un número entero)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +83,7 @@
       <workItem from="1714210161346" duration="4101000" />
       <workItem from="1714214841775" duration="2151000" />
       <workItem from="1714284547170" duration="3000" />
-      <workItem from="1714284568559" duration="8939000" />
+      <workItem from="1714284568559" duration="9209000" />
     </task>
     <task id="LOCAL-00001" summary="Menu">
       <option name="closed" value="true" />
@@ -114,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714217141193</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Opcion 10 hecha más método pertenecePorDato (comprueba si un elemento pertenece por su dato a partir de un número entero)">
+      <option name="closed" value="true" />
+      <created>1714295353215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714295353215</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +127,7 @@
     <MESSAGE value="Menu" />
     <MESSAGE value="Opcion 7" />
     <MESSAGE value="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB" />
+    <MESSAGE value="Opcion 10 hecha más método pertenecePorDato (comprueba si un elemento pertenece por su dato a partir de un número entero)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opcion 10 hecha más método pertenecePorDato (comprueba si un elemento pertenece por su dato a partir de un número entero)" />
   </component>
 </project>

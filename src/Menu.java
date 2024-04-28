@@ -210,9 +210,9 @@ public class Menu {
 
     public void comprobarClavePequeña(AB arbol){
        if(arbol.getRaiz().comprobarClavePequeña(arbol.getRaiz())){
-              System.out.println("El arbol cumple la condicion de clave pequeña");
+           System.out.println("El AB" + indiceArbol + " cumple la propiedad de clave pequeña en cada nodo");
         }else{
-                System.out.println("El arbol no cumple la condicion de clave pequeña");
+                System.out.println("El AB" + indiceArbol + " no cumple la propiedad de clave pequeña en cada nodo");
         }
 
     }

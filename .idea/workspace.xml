@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Opcion 7">
+    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" afterDir="false" />
@@ -86,7 +86,9 @@
       <workItem from="1713977495589" duration="2581000" />
       <workItem from="1714207788678" duration="2264000" />
       <workItem from="1714210161346" duration="4101000" />
-      <workItem from="1714214841775" duration="1792000" />
+      <workItem from="1714214841775" duration="2151000" />
+      <workItem from="1714284547170" duration="3000" />
+      <workItem from="1714284568559" duration="8939000" />
     </task>
     <task id="LOCAL-00001" summary="Menu">
       <option name="closed" value="true" />
@@ -104,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714210348543</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB">
+      <option name="closed" value="true" />
+      <created>1714217141193</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714217141193</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Menu" />
     <MESSAGE value="Opcion 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opcion 7" />
+    <MESSAGE value="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB" />
   </component>
 </project>

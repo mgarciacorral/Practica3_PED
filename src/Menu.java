@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Menu {
 
     AB<Integer>[] arboles = null;
+    private int indiceArbol = 0;
 
     public Menu(){
         bucleMenu();
@@ -132,13 +133,17 @@ public class Menu {
                     }
                     break;
                 case 10:
-                    if(arbolVacio()){
-                        System.out.println("No hay arboles creados");
+                    try{
+                        AB arbol = seleccionarArbol();
+                        mostrarAscendientes(arbol);
                         pause();
-                    }else{
-
+                        break;
+                    }catch (Exception e){
+                        System.out.println("El arbol no existe");
+                        pause();
+                        continue;
                     }
-                    break;
+
                 case 11:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
@@ -172,7 +177,7 @@ public class Menu {
     }
 
     public void pause() {
-        System.out.println("Presiona Enter para continuar...");
+        System.out.print("\nPresiona Enter para continuar...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
@@ -183,8 +188,8 @@ public class Menu {
         System.out.println("1. Arbol 1");
         System.out.println("2. Arbol 2");
         System.out.print("Introduce una opcion: ");
-        int opcion = scanner.nextInt();
-        return arboles[opcion-1];
+        indiceArbol = scanner.nextInt();
+        return arboles[indiceArbol-1];
     }
 
     public static AB<Integer>[] crearArboles(){
@@ -221,4 +226,19 @@ public class Menu {
         }
     }
 
+    public void mostrarAscendientes(AB arbol){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce un elemento: ");
+        int elem = scanner.nextInt();
+        if(arbol.pertenecePorDato(elem, arbol.getRaiz())){
+            if((Integer) arbol.getRaiz().getDato() == elem){
+                System.out.println("El elemento introducido es la raiz del arbol");
+            }else{
+                System.out.print("Considerando el árbol AB"+ indiceArbol +" y el índice " + elem + " sus ascendientes son: ");
+                arbol.mostrarAscendientes(elem, arbol.getRaiz(), null);
+            }
+        }else{
+            System.out.println("El elemento introducido no pertenece al arbol");
+        }
+    }
 }

@@ -93,6 +93,19 @@ public class AB<E> implements I_AB<E>
         return raiz.buscarElemento(elem) != null;
     }
 
+    public boolean pertenecePorDato(int elem, NodoAB<E> nodo){
+        if(nodo != null){
+            if((Integer) nodo.getDato() == elem){
+                return true;
+            }else{
+                return pertenecePorDato(elem, nodo.getIzq()) || pertenecePorDato(elem, nodo.getDer());
+            }
+        }else{
+            return false;
+        }
+
+    }
+
     public void vaciarModo2(NodoAB<E> padre, NodoAB<E> nodo) {
         if (nodo != null) {
             if (nodo.getIzq() != null){
@@ -119,7 +132,32 @@ public class AB<E> implements I_AB<E>
             mostrarArbol(nodo.getIzq());
             mostrarArbol(nodo.getDer());
         }
-
     }
 
+    public void mostrarAscendientes(int elem, NodoAB<E> nodo, NodoAB<E> padre){
+
+        if((Integer) this.getRaiz().getDato() != elem){
+            if(nodo != null){
+                if((Integer) nodo.getDato() == elem){
+                    if(padre != null){
+                        System.out.print(padre.getDato() + " ");
+                        mostrarAscendientes((Integer) padre.getDato(), this.raiz, null);
+                    }
+                }else{
+                    if(nodo.getIzq() != null && nodo.getDer() == null){
+                        mostrarAscendientes(elem, nodo.getIzq(), nodo);
+                    }else if(nodo.getIzq() == null && nodo.getDer() != null){
+                        mostrarAscendientes(elem, nodo.getDer(), nodo);
+                    }else if(nodo.getIzq() != null && nodo.getDer() != null){
+                        if((Integer) nodo.getIzq().getDato() == (Integer) nodo.getDer().getDato()){
+                            mostrarAscendientes(elem, nodo.getIzq(), nodo);
+                        }else{
+                            mostrarAscendientes(elem, nodo.getIzq(), nodo);
+                            mostrarAscendientes(elem, nodo.getDer(), nodo);
+                        }
+                    }
+            }
+        }
+    }
+    }
 }

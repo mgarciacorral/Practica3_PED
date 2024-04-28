@@ -160,4 +160,31 @@ public class AB<E> implements I_AB<E>
         }
     }
     }
+
+    public int sumaNodosNiveles(int nivelInferior, int nivelSuperior, NodoAB<E> nodo, int nivel){
+        int suma = 0;
+        if(nodo != null){
+            if(nivel >= nivelInferior && nivel <= nivelSuperior){
+                suma += (Integer) nodo.getDato();
+            }
+            suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getIzq(), nivel + 1);
+            suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getDer(), nivel + 1);
+        }
+        return suma;
+
+    }
+
+    public int totalImparesNivel(int nivel, NodoAB<E> nodo, int nivelActual){
+        int suma = 0;
+        if(nodo != null){
+            if(nivel == nivelActual){
+                if((Integer) nodo.getDato() % 2 != 0){
+                    suma++;
+                }
+            }
+            suma += totalImparesNivel(nivel, nodo.getIzq(), nivelActual + 1);
+            suma += totalImparesNivel(nivel, nodo.getDer(), nivelActual + 1);
+        }
+        return suma;
+    }
 }

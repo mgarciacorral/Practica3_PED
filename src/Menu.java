@@ -145,31 +145,20 @@ public class Menu {
                     }
 
                 case 11:
-                    if(arbolVacio()){
-                        System.out.println("No hay arboles creados");
-                        pause();
-                    }else{
-
-                    }
+                    sumaNodosNiveles(seleccionarArbol());
+                    pause();
                     break;
                 case 12:
-                    if(arbolVacio()){
-                        System.out.println("No hay arboles creados");
-                        pause();
-                    }else{
-
-                    }
+                    totalImparesNivel(seleccionarArbol());
+                    pause();
                     break;
                 case 0:
                     salir = true;
                     System.out.println("Gracias por utilizar nuestro TAD ABEnteros");
-                    pause();
                     break;
 
                 default:
                     System.out.println("Opcion no valida");
-                    pause();
-
                     break;
             }
         }
@@ -234,11 +223,48 @@ public class Menu {
             if((Integer) arbol.getRaiz().getDato() == elem){
                 System.out.println("El elemento introducido es la raiz del arbol");
             }else{
-                System.out.print("Considerando el árbol AB"+ indiceArbol +" y el índice " + elem + " sus ascendientes son: ");
+                System.out.print("Los ascendientes de " + elem + " son: ");
                 arbol.mostrarAscendientes(elem, arbol.getRaiz(), null);
             }
         }else{
             System.out.println("El elemento introducido no pertenece al arbol");
+        }
+    }
+
+    public void sumaNodosNiveles(AB arbol){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce el nivel inferior: ");
+        int nivelInferior = scanner.nextInt();
+        System.out.print("Introduce el nivel superior: ");
+        int nivelSuperior = scanner.nextInt();
+        if(nivelInferior < 0 || nivelSuperior < 0){
+            System.out.println("Los niveles deben ser mayores o iguales a 0");
+        }else{
+            if(nivelInferior > nivelSuperior){
+                System.out.println("El nivel inferior debe ser menor o igual al nivel superior");
+            }else{
+                if(arbolVacio()){
+                    System.out.println("No hay arboles creados");
+                }else{
+                    System.out.println("La suma de elementos entre estos niveles es " + arbol.sumaNodosNiveles(nivelInferior, nivelSuperior, arbol.getRaiz(), 0));
+                }
+            }
+        }
+    }
+
+    public void totalImparesNivel(AB arbol){
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce el nivel: ");
+        int nivel = scanner.nextInt();
+        if(nivel < 0){
+            System.out.println("El nivel debe ser mayor o igual a 0");
+        }else{
+            if(arbolVacio()){
+                System.out.println("No hay arboles creados");
+            }else{
+                System.out.println("El número de nodos impares en el nivel " + nivel + " es " + arbol.totalImparesNivel(nivel, arbol.getRaiz(), 0));
+            }
         }
     }
 }

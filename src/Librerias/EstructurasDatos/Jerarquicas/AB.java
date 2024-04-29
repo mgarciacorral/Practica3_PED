@@ -76,15 +76,6 @@ public class AB<E> implements I_AB<E>
         }
     }
 
-    public boolean comprobarSuma()
-    {
-        if (this.raiz != null)
-        {
-            return this.raiz.comprobarSuma();
-        }
-        return true;
-    }
-
     public void insertar(E elem,  E padre, char lugar)
     {
         NodoAB<E> nodo = new NodoAB<E>(elem);
@@ -165,68 +156,6 @@ public class AB<E> implements I_AB<E>
                 setRaiz(null);
             }
         }
-    }
-
-    public void mostrarArbol(NodoAB<E> nodo){
-        if(nodo != null){
-            System.out.println(nodo.getDato());
-            mostrarArbol(nodo.getIzq());
-            mostrarArbol(nodo.getDer());
-        }
-    }
-
-    public void mostrarAscendientes(int elem, NodoAB<E> nodo, NodoAB<E> padre){
-
-        if((Integer) this.getRaiz().getDato() != elem){
-            if(nodo != null){
-                if((Integer) nodo.getDato() == elem){
-                    if(padre != null){
-                        System.out.print(padre.getDato() + " ");
-                        mostrarAscendientes((Integer) padre.getDato(), this.raiz, null);
-                    }
-                }else{
-                    if(nodo.getIzq() != null && nodo.getDer() == null){
-                        mostrarAscendientes(elem, nodo.getIzq(), nodo);
-                    }else if(nodo.getIzq() == null && nodo.getDer() != null){
-                        mostrarAscendientes(elem, nodo.getDer(), nodo);
-                    }else if(nodo.getIzq() != null && nodo.getDer() != null){
-                        if((Integer) nodo.getIzq().getDato() == (Integer) nodo.getDer().getDato()){
-                            mostrarAscendientes(elem, nodo.getIzq(), nodo);
-                        }else{
-                            mostrarAscendientes(elem, nodo.getIzq(), nodo);
-                            mostrarAscendientes(elem, nodo.getDer(), nodo);
-                        }
-                    }
-            }
-        }
-    }
-    }
-
-    public int sumaNodosNiveles(int nivelInferior, int nivelSuperior, NodoAB<E> nodo, int nivel){
-        int suma = 0;
-        if(nodo != null){
-            if(nivel >= nivelInferior && nivel <= nivelSuperior){
-                suma += (Integer) nodo.getDato();
-            }
-            suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getIzq(), nivel + 1);
-            suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getDer(), nivel + 1);
-        }
-        return suma;
-
-    }
-
-    public int totalImparesNivel(int nivel, NodoAB<E> nodo, int nivelActual){
-        int suma = 0;
-        if(nodo != null){
-            if(nivel == nivelActual){
-                if((Integer) nodo.getDato() % 2 != 0){
-                    suma++;
-                }
-            }
-            suma += totalImparesNivel(nivel, nodo.getIzq(), nivelActual + 1);
-            suma += totalImparesNivel(nivel, nodo.getDer(), nivelActual + 1);
-        }
-        return suma;
     }
 
     public int calcularNivelArbol(NodoAB<E> nodo, int nivel){

@@ -1,4 +1,5 @@
 import Librerias.EstructurasDatos.Jerarquicas.AB;
+import Librerias.EstructurasDatos.Jerarquicas.ABEnteros;
 import Librerias.EstructurasDatos.Jerarquicas.NodoAB;
 
 import java.util.Scanner;
@@ -6,7 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    AB<Integer>[] arboles = null;
+    ABEnteros[] arboles = null;
     private int indiceArbol = 0;
 
     public Menu(){
@@ -56,7 +57,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         arbol.inOrder();
                         pause();
                     }
@@ -66,7 +67,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         arbol.inOrderConverso();
                         pause();
                     }
@@ -76,7 +77,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         arbol.preOrder();
                         pause();
                     }
@@ -86,7 +87,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         arbol.postOrder();
                         pause();
                     }
@@ -96,7 +97,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         if(arbol.comprobarSuma()) {
                             System.out.println("El arbol cumple la propiedad de suma");
                         }else{
@@ -107,9 +108,9 @@ public class Menu {
                     break;
                 case 7:
                     try{
-                    AB<Integer> arbol = seleccionarArbol();
-                    comprobarClavePequeña(arbol);
-                    pause();
+                        ABEnteros arbol = seleccionarArbol();
+                        comprobarClavePequeña(arbol);
+                        pause();
                     }catch (Exception e){
                         System.out.println("El arbol no existe");
                         pause();
@@ -121,7 +122,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         arbol.vaciar();
                         if(arbol.esVacio()){
                             System.out.println("Arbol vaciado con exito");
@@ -135,7 +136,7 @@ public class Menu {
 
                 case 9:
                     try{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         vaciarArbolModo2(arbol);
                         pause();
                     }catch (Exception e){
@@ -146,7 +147,7 @@ public class Menu {
                     break;
                 case 10:
                     try{
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         mostrarAscendientes(arbol);
                         pause();
                         break;
@@ -158,7 +159,7 @@ public class Menu {
 
                 case 11:
                     try {
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         sumaNodosNiveles(arbol);
                         pause();
                         break;
@@ -170,7 +171,7 @@ public class Menu {
 
                 case 12:
                     try {
-                        AB<Integer> arbol = seleccionarArbol();
+                        ABEnteros arbol = seleccionarArbol();
                         totalImparesNivel(arbol);
                         pause();
                         break;
@@ -198,7 +199,7 @@ public class Menu {
         scanner.nextLine();
     }
 
-    public AB<Integer> seleccionarArbol(){
+    public ABEnteros seleccionarArbol(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("\tEleccion de arbol ");
         System.out.println("1. Arbol 1");
@@ -208,11 +209,13 @@ public class Menu {
         return arboles[indiceArbol-1];
     }
 
-    public static AB<Integer>[] crearArboles(){
-        AB<Integer> arbol1 = new AB<Integer>();
-        arbol1.setRaiz(new NodoAB<Integer>(2, new NodoAB<Integer>(6, new NodoAB<Integer>(9), new NodoAB<Integer>(7)), new NodoAB<Integer>(5, null, new NodoAB<Integer>(8))));        AB<Integer> arbol2 = new AB<Integer>();
+    public static ABEnteros[] crearArboles(){
+        ABEnteros arbol1 = new ABEnteros();
+        ABEnteros arbol2 = new ABEnteros();
+
+        arbol1.setRaiz(new NodoAB<Integer>(2, new NodoAB<Integer>(6, new NodoAB<Integer>(9), new NodoAB<Integer>(7)), new NodoAB<Integer>(5, null, new NodoAB<Integer>(8))));
         arbol2.setRaiz(new NodoAB<Integer>(13, new NodoAB<Integer>(12, new NodoAB<Integer>(8), new NodoAB<Integer>(4, new NodoAB<Integer>(2), new NodoAB<Integer>(2))), new NodoAB<Integer>(34, new NodoAB<Integer>(-3, new NodoAB<Integer>(0), null), new NodoAB<Integer>(-3))));
-        return new AB[]{arbol1, arbol2};
+        return new ABEnteros[]{arbol1, arbol2};
     }
 
     public boolean arbolVacio(){
@@ -220,7 +223,7 @@ public class Menu {
     }
 
 
-    public void comprobarClavePequeña(AB arbol){
+    public void comprobarClavePequeña(ABEnteros arbol){
        if(arbol.getRaiz().comprobarClavePequeña(arbol.getRaiz())){
            System.out.println("El AB" + indiceArbol + " cumple la propiedad de clave pequeña en cada nodo");
         }else{
@@ -229,7 +232,7 @@ public class Menu {
 
     }
 
-    public void vaciarArbolModo2(AB arbol){
+    public void vaciarArbolModo2(ABEnteros arbol){
         arbol.vaciarModo2(null, arbol.getRaiz());
         if(arbol.esVacio()){
             System.out.println("Arbol vaciado con exito");
@@ -238,7 +241,7 @@ public class Menu {
         }
     }
 
-    public void mostrarAscendientes(AB arbol){
+    public void mostrarAscendientes(ABEnteros arbol){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce un elemento: ");
         int elem = scanner.nextInt();
@@ -254,7 +257,7 @@ public class Menu {
         }
     }
 
-    public void sumaNodosNiveles(AB arbol){
+    public void sumaNodosNiveles(ABEnteros arbol){
         System.out.println("El AB" + indiceArbol + " tiene " + arbol.calcularNivelArbol(arbol.getRaiz(), 0) + " niveles");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce el nivel inferior: ");
@@ -275,7 +278,7 @@ public class Menu {
         }
 
 
-    public void totalImparesNivel(AB arbol) {
+    public void totalImparesNivel(ABEnteros arbol) {
             System.out.println("El AB" + indiceArbol + " tiene " + arbol.calcularNivelArbol(arbol.getRaiz(), 0) + " niveles");
             Scanner scanner = new Scanner(System.in);
             System.out.print("Introduce el nivel: ");

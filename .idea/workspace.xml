@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="kjndas">
+    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="parte mati">
+      <change afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/ABEnteros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Modelos/I_ABEnteros.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -64,7 +64,8 @@
       <workItem from="1713977495589" duration="2581000" />
       <workItem from="1714040132973" duration="62000" />
       <workItem from="1714042308122" duration="11000" />
-      <workItem from="1714402359743" duration="3508000" />
+      <workItem from="1714402359743" duration="3655000" />
+      <workItem from="1714407007283" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="Menu">
       <option name="closed" value="true" />
@@ -82,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714402384162</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="parte mati">
+      <option name="closed" value="true" />
+      <created>1714405933831</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714405933831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Menu" />
     <MESSAGE value="kjndas" />
-    <option name="LAST_COMMIT_MESSAGE" value="kjndas" />
+    <MESSAGE value="parte mati" />
+    <option name="LAST_COMMIT_MESSAGE" value="parte mati" />
   </component>
 </project>

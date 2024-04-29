@@ -148,4 +148,33 @@ public class NodoAB<E>
             }
         }
     }
+    public boolean comprobarClavePequeña(NodoAB<E> nodo){
+        boolean clavePequeña = false;
+        if(nodo != null){
+            if(nodo.getIzq() != null){
+                if((Integer) nodo.getDato() <= (Integer) nodo.getIzq().getDato()){
+                    clavePequeña = comprobarClavePequeña(nodo.getIzq());
+                }else{
+                    return false;
+                }
+            }
+            if(nodo.getDer() != null){
+                if((Integer) nodo.getDato() <= (Integer) nodo.getDer().getDato()){
+                    clavePequeña = comprobarClavePequeña(nodo.getDer());
+                }else{
+                    return false;
+                }
+
+            }else{
+            return true;
+        }
+        }else{
+            return true;
+        }
+        return clavePequeña;
+
+    }
+
+
+
 }

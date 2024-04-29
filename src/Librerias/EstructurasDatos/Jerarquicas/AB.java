@@ -93,4 +93,114 @@ public class AB<E> implements I_AB<E>
         return raiz.buscarElemento(elem) != null;
     }
 
+    public boolean pertenecePorDato(int elem, NodoAB<E> nodo){
+        if(nodo != null){
+            if((Integer) nodo.getDato() == elem){
+                return true;
+            }else{
+                return pertenecePorDato(elem, nodo.getIzq()) || pertenecePorDato(elem, nodo.getDer());
+            }
+        }else{
+            return false;
+        }
+
+    }
+
+    public void vaciarModo2(NodoAB<E> padre, NodoAB<E> nodo) {
+        if (nodo != null) {
+            if (nodo.getIzq() != null){
+                vaciarModo2(nodo, nodo.getIzq());
+            }
+            if (nodo.getDer() != null) {
+                vaciarModo2(nodo, nodo.getDer());
+            }
+            if (padre != null) {
+                if (padre.getIzq() == nodo) {
+                    padre.setIzq(null);
+                } else if (padre.getDer() == nodo) {
+                    padre.setDer(null);
+                }
+            } else{
+                setRaiz(null);
+            }
+        }
+    }
+
+    public void mostrarArbol(NodoAB<E> nodo){
+        if(nodo != null){
+            System.out.println(nodo.getDato());
+            mostrarArbol(nodo.getIzq());
+            mostrarArbol(nodo.getDer());
+        }
+    }
+
+    public void mostrarAscendientes(int elem, NodoAB<E> nodo, NodoAB<E> padre){
+
+        if((Integer) this.getRaiz().getDato() != elem){
+            if(nodo != null){
+                if((Integer) nodo.getDato() == elem){
+                    if(padre != null){
+                        System.out.print(padre.getDato() + " ");
+                        mostrarAscendientes((Integer) padre.getDato(), this.raiz, null);
+                    }
+                }else{
+                    if(nodo.getIzq() != null && nodo.getDer() == null){
+                        mostrarAscendientes(elem, nodo.getIzq(), nodo);
+                    }else if(nodo.getIzq() == null && nodo.getDer() != null){
+                        mostrarAscendientes(elem, nodo.getDer(), nodo);
+                    }else if(nodo.getIzq() != null && nodo.getDer() != null){
+                        if((Integer) nodo.getIzq().getDato() == (Integer) nodo.getDer().getDato()){
+                            mostrarAscendientes(elem, nodo.getIzq(), nodo);
+                        }else{
+                            mostrarAscendientes(elem, nodo.getIzq(), nodo);
+                            mostrarAscendientes(elem, nodo.getDer(), nodo);
+                        }
+                    }
+            }
+        }
+    }
+    }
+
+    public int sumaNodosNiveles(int nivelInferior, int nivelSuperior, NodoAB<E> nodo, int nivel){
+        int suma = 0;
+        if(nodo != null){
+            if(nivel >= nivelInferior && nivel <= nivelSuperior){
+                suma += (Integer) nodo.getDato();
+            }
+            suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getIzq(), nivel + 1);
+            suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getDer(), nivel + 1);
+        }
+        return suma;
+
+    }
+
+    public int totalImparesNivel(int nivel, NodoAB<E> nodo, int nivelActual){
+        int suma = 0;
+        if(nodo != null){
+            if(nivel == nivelActual){
+                if((Integer) nodo.getDato() % 2 != 0){
+                    suma++;
+                }
+            }
+            suma += totalImparesNivel(nivel, nodo.getIzq(), nivelActual + 1);
+            suma += totalImparesNivel(nivel, nodo.getDer(), nivelActual + 1);
+        }
+        return suma;
+    }
+
+    public int calcularNivelArbol(NodoAB<E> nodo, int nivel){
+        int nivelIzq = 0;
+        int nivelDer = 0;
+        if(nodo != null){
+            nivelIzq = calcularNivelArbol(nodo.getIzq(), nivel + 1);
+            nivelDer = calcularNivelArbol(nodo.getDer(), nivel + 1);
+            if(nivelIzq > nivelDer){
+                return nivelIzq;
+            }else{
+                return nivelDer;
+            }
+        }else{
+            return nivel;
+        }
+    }
 }

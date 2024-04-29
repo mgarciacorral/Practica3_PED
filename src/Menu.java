@@ -1,7 +1,6 @@
 import Librerias.EstructurasDatos.Jerarquicas.AB;
 import Librerias.EstructurasDatos.Jerarquicas.NodoAB;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -57,16 +56,19 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-
+                        AB<Integer> arbol = seleccionarArbol();
+                        arbol.inOrder();
+                        pause();
                     }
                     break;
                 case 3:
                     if(arbolVacio()){
                         System.out.println("No hay arboles creados");
                         pause();
-
                     }else{
-
+                        AB<Integer> arbol = seleccionarArbol();
+                        arbol.inOrderConverso();
+                        pause();
                     }
                     break;
                 case 4:
@@ -74,7 +76,9 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-
+                        AB<Integer> arbol = seleccionarArbol();
+                        arbol.preOrder();
+                        pause();
                     }
                     break;
                 case 5:
@@ -82,7 +86,9 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-
+                        AB<Integer> arbol = seleccionarArbol();
+                        arbol.postOrder();
+                        pause();
                     }
                     break;
                 case 6://HASTA AQUI MATI
@@ -90,12 +96,18 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-
+                        AB<Integer> arbol = seleccionarArbol();
+                        if(arbol.comprobarSuma()) {
+                            System.out.println("El arbol cumple la propiedad de suma");
+                        }else{
+                            System.out.println("El arbol no cumple la propiedad de suma");
+                        }
+                        pause();
                     }
                     break;
                 case 7:
                     try{
-                    AB arbol = seleccionarArbol();
+                    AB<Integer> arbol = seleccionarArbol();
                     comprobarClavePequeña(arbol);
                     pause();
                     }catch (Exception e){
@@ -109,7 +121,7 @@ public class Menu {
                         System.out.println("No hay arboles creados");
                         pause();
                     }else{
-                        AB arbol = seleccionarArbol();
+                        AB<Integer> arbol = seleccionarArbol();
                         arbol.vaciar();
                         if(arbol.esVacio()){
                             System.out.println("Arbol vaciado con exito");
@@ -123,7 +135,7 @@ public class Menu {
 
                 case 9:
                     try{
-                        AB arbol = seleccionarArbol();
+                        AB<Integer> arbol = seleccionarArbol();
                         vaciarArbolModo2(arbol);
                         pause();
                     }catch (Exception e){
@@ -134,7 +146,7 @@ public class Menu {
                     break;
                 case 10:
                     try{
-                        AB arbol = seleccionarArbol();
+                        AB<Integer> arbol = seleccionarArbol();
                         mostrarAscendientes(arbol);
                         pause();
                         break;
@@ -146,7 +158,7 @@ public class Menu {
 
                 case 11:
                     try {
-                        AB arbol = seleccionarArbol();
+                        AB<Integer> arbol = seleccionarArbol();
                         sumaNodosNiveles(arbol);
                         pause();
                         break;
@@ -158,7 +170,7 @@ public class Menu {
 
                 case 12:
                     try {
-                        AB arbol = seleccionarArbol();
+                        AB<Integer> arbol = seleccionarArbol();
                         totalImparesNivel(arbol);
                         pause();
                         break;
@@ -186,7 +198,7 @@ public class Menu {
         scanner.nextLine();
     }
 
-    public AB seleccionarArbol(){
+    public AB<Integer> seleccionarArbol(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("\tEleccion de arbol ");
         System.out.println("1. Arbol 1");
@@ -204,11 +216,7 @@ public class Menu {
     }
 
     public boolean arbolVacio(){
-        if(arboles == null){
-            return true;
-        }else{
-            return false;
-        }
+        return arboles == null;
     }
 
 

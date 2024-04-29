@@ -44,6 +44,47 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    public void inOrder()
+    {
+        if (this.raiz != null)
+        {
+            this.raiz.inOrder();
+        }
+    }
+
+    public void inOrderConverso()
+    {
+        if (this.raiz != null)
+        {
+            this.raiz.inOrderConverso();
+        }
+    }
+
+    public void preOrder()
+    {
+        if (this.raiz != null)
+        {
+            this.raiz.preOrder();
+        }
+    }
+
+    public void postOrder()
+    {
+        if (this.raiz != null)
+        {
+            this.raiz.postOrder();
+        }
+    }
+
+    public boolean comprobarSuma()
+    {
+        if (this.raiz != null)
+        {
+            return this.raiz.comprobarSuma();
+        }
+        return true;
+    }
+
     public void insertar(E elem,  E padre, char lugar)
     {
         NodoAB<E> nodo = new NodoAB<E>(elem);

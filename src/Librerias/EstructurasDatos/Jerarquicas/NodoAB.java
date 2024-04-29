@@ -105,6 +105,97 @@ public class NodoAB<E>
         return num;
     }
 
+    public void inOrder()
+    {
+        if (this.izq != null)
+        {
+            this.izq.inOrder();
+        }
+        System.out.print(this.dato + " ");
+        if (this.der != null)
+        {
+            this.der.inOrder();
+        }
+    }
+
+    public void inOrderConverso()
+    {
+        if (this.der != null)
+        {
+            this.der.inOrderConverso();
+        }
+        System.out.print(this.dato + " ");
+        if (this.izq != null)
+        {
+            this.izq.inOrderConverso();
+        }
+    }
+
+    public void preOrder()
+    {
+        System.out.print(this.dato + " ");
+        if (this.izq != null)
+        {
+            this.izq.preOrder();
+        }
+        if (this.der != null)
+        {
+            this.der.preOrder();
+        }
+    }
+
+    public void postOrder()
+    {
+        if (this.izq != null)
+        {
+            this.izq.postOrder();
+        }
+        if (this.der != null)
+        {
+            this.der.postOrder();
+        }
+        System.out.print(this.dato + " ");
+    }
+
+    public boolean comprobarSuma()
+    {
+        if(izq != null && der != null) {
+            if(izq.valorNodo() == der.valorNodo()) {
+                if(this.izq != null && this.der != null){
+                    return this.izq.comprobarSuma() && this.der.comprobarSuma();
+                } else if (this.izq != null){
+                    return this.izq.valorNodo() == 0;
+                } else if (this.der != null){
+                    return this.der.valorNodo() == 0;
+                } else {
+                    return true;
+                }
+            }else {
+                return false;
+            }
+        }else if (this.izq != null){
+            return this.izq.valorNodo() == 0 && izq.comprobarSuma();
+        } else if (this.der != null){
+            return this.der.valorNodo() == 0;
+        } else {
+            return true;
+        }
+    }
+
+    public int valorNodo()
+    {
+        int valor = (Integer) this.dato;
+        if (this.izq != null)
+        {
+            valor += this.izq.valorNodo();
+        }
+        if (this.der != null)
+        {
+            valor += this.der.valorNodo();
+        }
+        return valor;
+    }
+
     public NodoAB<E> buscarElemento(E elem)
     {
         if (this.dato.equals(elem))

@@ -187,4 +187,20 @@ public class AB<E> implements I_AB<E>
         }
         return suma;
     }
+
+    public int calcularNivelArbol(NodoAB<E> nodo, int nivel){
+        int nivelIzq = 0;
+        int nivelDer = 0;
+        if(nodo != null){
+            nivelIzq = calcularNivelArbol(nodo.getIzq(), nivel + 1);
+            nivelDer = calcularNivelArbol(nodo.getDer(), nivel + 1);
+            if(nivelIzq > nivelDer){
+                return nivelIzq;
+            }else{
+                return nivelDer;
+            }
+        }else{
+            return nivel;
+        }
+    }
 }

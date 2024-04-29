@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Pequeña corrección en la opción 7">
+    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Opción 11 y 12 hechas, solo falta evitar que el programa retorne errores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
@@ -89,7 +89,8 @@
       <workItem from="1714284547170" duration="3000" />
       <workItem from="1714284568559" duration="9209000" />
       <workItem from="1714295420121" duration="123000" />
-      <workItem from="1714322185811" duration="961000" />
+      <workItem from="1714322185811" duration="1408000" />
+      <workItem from="1714378624952" duration="1364000" />
     </task>
     <task id="LOCAL-00001" summary="Menu">
       <option name="closed" value="true" />
@@ -131,11 +132,30 @@
       <option name="project" value="LOCAL" />
       <updated>1714295527875</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Opción 11 y 12 hechas, solo falta evitar que el programa retorne errores">
+      <option name="closed" value="true" />
+      <created>1714323602805</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714323602805</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Menu" />
@@ -143,6 +163,7 @@
     <MESSAGE value="Opcion 9 y función mostrarArbol(en PreOrden) en clase AB" />
     <MESSAGE value="Opcion 10 hecha más método pertenecePorDato (comprueba si un elemento pertenece por su dato a partir de un número entero)" />
     <MESSAGE value="Pequeña corrección en la opción 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pequeña corrección en la opción 7" />
+    <MESSAGE value="Opción 11 y 12 hechas, solo falta evitar que el programa retorne errores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opción 11 y 12 hechas, solo falta evitar que el programa retorne errores" />
   </component>
 </project>

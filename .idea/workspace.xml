@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="Menu">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/AB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/NodoAB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +59,8 @@
       <workItem from="1713976164724" duration="1172000" />
       <workItem from="1713977369708" duration="94000" />
       <workItem from="1713977495589" duration="2581000" />
+      <workItem from="1714040132973" duration="62000" />
+      <workItem from="1714042308122" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Menu">
       <option name="closed" value="true" />

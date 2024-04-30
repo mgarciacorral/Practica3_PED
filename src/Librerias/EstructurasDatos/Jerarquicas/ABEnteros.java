@@ -3,78 +3,11 @@ package Librerias.EstructurasDatos.Jerarquicas;
 import Librerias.EstructurasDatos.Modelos.I_AB;
 import Librerias.EstructurasDatos.Modelos.I_ABEnteros;
 
-public class ABEnteros implements I_ABEnteros
+public class ABEnteros<Integer> extends AB<Integer> implements I_ABEnteros<Integer>
 {
-    NodoAB<Integer> raiz;
-
     public ABEnteros()
     {
-        this.raiz = null;
-    }
-
-    public boolean esVacio()
-    {
-        return this.raiz == null;
-    }
-
-    public void vaciar()
-    {
-        this.raiz = null;
-    }
-
-    public NodoAB<Integer> getRaiz()
-    {
-        return this.raiz;
-    }
-
-    public void setRaiz(NodoAB<Integer> raiz)
-    {
-        this.raiz = raiz;
-    }
-
-    public void insertar(int elem)
-    {
-        NodoAB<Integer> nodo = new NodoAB<Integer>(elem);
-        if (this.raiz == null)
-        {
-            this.raiz = nodo;
-        }
-        else
-        {
-            this.raiz.insertar(nodo);
-        }
-    }
-
-    public void inOrder()
-    {
-        if (this.raiz != null)
-        {
-            this.raiz.inOrder();
-        }
-    }
-
-    public void inOrderConverso()
-    {
-        if (this.raiz != null)
-        {
-            this.raiz.inOrderConverso();
-        }
-    }
-
-    public void preOrder()
-    {
-        if (this.raiz != null)
-        {
-            this.raiz.preOrder();
-        }
-    }
-
-    public void postOrder()
-    {
-        if (this.raiz != null)
-        {
-            this.raiz.postOrder();
-        }
+        super();
     }
 
     public boolean comprobarSuma()
@@ -86,96 +19,14 @@ public class ABEnteros implements I_ABEnteros
         return true;
     }
 
-    public void insertar(int elem,  int padre, char lugar)
-    {
-        NodoAB<Integer> nodo = new NodoAB<Integer>(elem);
-        if (this.raiz == null)
-        {
-            this.raiz = nodo;
-        }
-        else
-        {
-            NodoAB<Integer> nodoPadre = buscarElemento(padre);
-            if (nodoPadre != null)
-            {
-                if (lugar == 'I')
-                {
-                    nodoPadre.setIzq(nodo);
-                }
-                else
-                {
-                    nodoPadre.setDer(nodo);
-                }
-            }
-        }
-    }
-
-    public NodoAB<Integer> buscarElemento(int elem)
-    {
-        return raiz.buscarElemento(elem);
-    }
-
-    public void eliminar(int elem)
-    {
-        if (this.raiz != null)
-        {
-            if (this.raiz.getDato().equals(elem))
-            {
-                this.raiz = null;
-            }
-            else
-            {
-                this.raiz.eliminar(elem);
-            }
-        }
-    }
-
-    public boolean pertenece(int elem)
-    {
-        return raiz.buscarElemento(elem) != null;
-    }
-
-    public boolean pertenecePorDato(int elem, NodoAB<Integer> nodo){
-        if(nodo != null){
-            if((Integer) nodo.getDato() == elem){
-                return true;
-            }else{
-                return pertenecePorDato(elem, nodo.getIzq()) || pertenecePorDato(elem, nodo.getDer());
-            }
-        }else{
-            return false;
-        }
-
-    }
-
-    public void vaciarModo2(NodoAB<Integer> padre, NodoAB<Integer> nodo) {
-        if (nodo != null) {
-            if (nodo.getIzq() != null){
-                vaciarModo2(nodo, nodo.getIzq());
-            }
-            if (nodo.getDer() != null) {
-                vaciarModo2(nodo, nodo.getDer());
-            }
-            if (padre != null) {
-                if (padre.getIzq() == nodo) {
-                    padre.setIzq(null);
-                } else if (padre.getDer() == nodo) {
-                    padre.setDer(null);
-                }
-            } else{
-                setRaiz(null);
-            }
-        }
-    }
-
     public void mostrarAscendientes(int elem, NodoAB<Integer> nodo, NodoAB<Integer> padre){
 
-        if((Integer) this.getRaiz().getDato() != elem){
+        if((int) this.getRaiz().getDato() != elem){
             if(nodo != null){
-                if((Integer) nodo.getDato() == elem){
+                if((int) nodo.getDato() == elem){
                     if(padre != null){
                         System.out.print(padre.getDato() + " ");
-                        mostrarAscendientes((Integer) padre.getDato(), this.raiz, null);
+                        mostrarAscendientes((int) padre.getDato(), this.raiz, null);
                     }
                 }else{
                     if(nodo.getIzq() != null && nodo.getDer() == null){
@@ -199,7 +50,7 @@ public class ABEnteros implements I_ABEnteros
         int suma = 0;
         if(nodo != null){
             if(nivel >= nivelInferior && nivel <= nivelSuperior){
-                suma += nodo.getDato();
+                suma += (int)nodo.getDato();
             }
             suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getIzq(), nivel + 1);
             suma += sumaNodosNiveles(nivelInferior, nivelSuperior, nodo.getDer(), nivel + 1);
@@ -212,7 +63,7 @@ public class ABEnteros implements I_ABEnteros
         int suma = 0;
         if(nodo != null){
             if(nivel == nivelActual){
-                if(nodo.getDato() % 2 != 0){
+                if((int)nodo.getDato() % 2 != 0){
                     suma++;
                 }
             }
@@ -220,21 +71,5 @@ public class ABEnteros implements I_ABEnteros
             suma += totalImparesNivel(nivel, nodo.getDer(), nivelActual + 1);
         }
         return suma;
-    }
-
-    public int calcularNivelArbol(NodoAB<Integer> nodo, int nivel){
-        int nivelIzq = 0;
-        int nivelDer = 0;
-        if(nodo != null){
-            nivelIzq = calcularNivelArbol(nodo.getIzq(), nivel + 1);
-            nivelDer = calcularNivelArbol(nodo.getDer(), nivel + 1);
-            if(nivelIzq > nivelDer){
-                return nivelIzq;
-            }else{
-                return nivelDer;
-            }
-        }else{
-            return nivel;
-        }
     }
 }

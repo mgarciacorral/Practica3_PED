@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="ABEnteros creado e implementado">
+    <list default="true" id="ba54990b-b6a6-4122-8e6c-b80a8aab0a72" name="Changes" comment="practica finalizada">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/ABEnteros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Jerarquicas/ABEnteros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Modelos/I_ABEnteros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Librerias/EstructurasDatos/Modelos/I_ABEnteros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <workItem from="1714042308122" duration="11000" />
       <workItem from="1714402359743" duration="3655000" />
       <workItem from="1714407007283" duration="1234000" />
-      <workItem from="1714486083143" duration="1695000" />
+      <workItem from="1714486083143" duration="3642000" />
     </task>
     <task id="LOCAL-00001" summary="Menu">
       <option name="closed" value="true" />
@@ -116,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714408213154</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="practica finalizada">
+      <option name="closed" value="true" />
+      <created>1714488049528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714488049529</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +145,7 @@
     <MESSAGE value="kjndas" />
     <MESSAGE value="parte mati" />
     <MESSAGE value="ABEnteros creado e implementado" />
-    <option name="LAST_COMMIT_MESSAGE" value="ABEnteros creado e implementado" />
+    <MESSAGE value="practica finalizada" />
+    <option name="LAST_COMMIT_MESSAGE" value="practica finalizada" />
   </component>
 </project>

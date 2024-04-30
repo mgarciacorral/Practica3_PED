@@ -20,6 +20,7 @@ public class NodoAB<E>
         this.der = der;
     }
 
+    // Getters y Setters
     public E getDato()
     {
         return this.dato;
@@ -50,31 +51,37 @@ public class NodoAB<E>
         this.der = h;
     }
 
+    //borra el hijo izquierdo
     public void borrarIzq()
     {
         this.izq = null;
     }
 
+    //borra el hijo derecho
     public void borrarDer()
     {
         this.der = null;
     }
 
+    //indica si el nodo es una hoja
     public boolean esHoja()
     {
         return this.izq == null && this.der == null;
     }
 
+    //indica si el nodo contiene algun dato
     public boolean esVacio()
     {
         return this.dato == null;
     }
 
+    //devuelve el dato del nodo en forma de String
     public String toString()
     {
         return this.dato.toString();
     }
 
+    //inseta un nodo en el arbol
     public void insertar(NodoAB<E> nodo)
     {
         if (this.izq == null)
@@ -91,6 +98,7 @@ public class NodoAB<E>
         }
     }
 
+    //devuelve el numero de descendientes del nodo
     public int numDescendientes()
     {
         int num = 0;
@@ -105,6 +113,7 @@ public class NodoAB<E>
         return num;
     }
 
+    //muestra el arbol en inOrden recursivamente
     public void inOrder()
     {
         if (this.izq != null)
@@ -118,6 +127,7 @@ public class NodoAB<E>
         }
     }
 
+    //muestra el arbol en inOrdenConverso recursivamente
     public void inOrderConverso()
     {
         if (this.der != null)
@@ -131,6 +141,7 @@ public class NodoAB<E>
         }
     }
 
+    //muestra el arbol en preOrden recursivamente
     public void preOrder()
     {
         System.out.print(this.dato + " ");
@@ -144,6 +155,7 @@ public class NodoAB<E>
         }
     }
 
+    //muestra el arbol en postOrden recursivamente
     public void postOrder()
     {
         if (this.izq != null)
@@ -157,6 +169,7 @@ public class NodoAB<E>
         System.out.print(this.dato + " ");
     }
 
+    //indica si la suma de los nodos de las dos ramas hijas es igual
     public boolean comprobarSuma()
     {
         if(izq != null && der != null) {
@@ -182,6 +195,7 @@ public class NodoAB<E>
         }
     }
 
+    //devuelve el valos del nosodo y todos sus hijos sumados
     public int valorNodo()
     {
         int valor = (Integer) this.dato;
@@ -196,6 +210,7 @@ public class NodoAB<E>
         return valor;
     }
 
+    //busca un elemento en el arbol
     public NodoAB<E> buscarElemento(E elem)
     {
         if (this.dato.equals(elem))
@@ -217,6 +232,7 @@ public class NodoAB<E>
         }
     }
 
+    //elimina un elemento del arbol
     public void eliminar(E elem)
     {
         if (this.izq != null && this.izq.getDato().equals(elem))
@@ -239,6 +255,8 @@ public class NodoAB<E>
             }
         }
     }
+
+    //comprueba que la clave del nodo sea mayor que la de sus hijos
     public boolean comprobarClavePequeña(NodoAB<E> nodo){
         boolean clavePequeña = false;
         if(nodo != null){
@@ -263,9 +281,5 @@ public class NodoAB<E>
             return true;
         }
         return clavePequeña;
-
     }
-
-
-
 }

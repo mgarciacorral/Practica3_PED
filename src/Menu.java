@@ -1,4 +1,3 @@
-import Librerias.EstructurasDatos.Jerarquicas.AB;
 import Librerias.EstructurasDatos.Jerarquicas.ABEnteros;
 import Librerias.EstructurasDatos.Jerarquicas.NodoAB;
 
@@ -14,6 +13,7 @@ public class Menu {
         bucleMenu();
     }
 
+    //crea un menu con las opciones de los metodos
     public void mostrarMenu(){
         System.out.println("\tMENU AB enteros");
         System.out.println("1. Crear arbol");
@@ -31,6 +31,7 @@ public class Menu {
         System.out.println("0. Salir");
     }
 
+    //bucle que se ejecuta hasta que el usuario decida salir
     public void bucleMenu(){
         Scanner scanner = new Scanner(System.in);
         int opcion;
@@ -193,12 +194,14 @@ public class Menu {
 
     }
 
+    //metodo para pausar la ejecucion del programa
     public void pause() {
         System.out.print("\nPresiona Enter para continuar...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
 
+    //metodo para seleccionar un arbol
     public ABEnteros seleccionarArbol(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("\tEleccion de arbol ");
@@ -209,6 +212,7 @@ public class Menu {
         return arboles[indiceArbol-1];
     }
 
+    //metodo para crear los arboles
     public static ABEnteros[] crearArboles(){
         ABEnteros arbol1 = new ABEnteros();
         ABEnteros arbol2 = new ABEnteros();
@@ -218,11 +222,13 @@ public class Menu {
         return new ABEnteros[]{arbol1, arbol2};
     }
 
+    //metodo para comprobar si hay arboles creados
     public boolean arbolVacio(){
         return arboles == null;
     }
 
 
+    //comprueba que los nodos hijos siempre son menores que sus padres
     public void comprobarClavePequeña(ABEnteros arbol){
        if(arbol.getRaiz().comprobarClavePequeña(arbol.getRaiz())){
            System.out.println("El AB" + indiceArbol + " cumple la propiedad de clave pequeña en cada nodo");
@@ -232,6 +238,7 @@ public class Menu {
 
     }
 
+    //metodo para vaciar el arbol
     public void vaciarArbolModo2(ABEnteros arbol){
         arbol.vaciarModo2(null, arbol.getRaiz());
         if(arbol.esVacio()){
@@ -241,6 +248,7 @@ public class Menu {
         }
     }
 
+    //muestra los ascendientes de un nodo
     public void mostrarAscendientes(ABEnteros arbol){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce un elemento: ");
@@ -257,6 +265,7 @@ public class Menu {
         }
     }
 
+    //suma los nodos entre dos niveles
     public void sumaNodosNiveles(ABEnteros arbol){
         System.out.println("El AB" + indiceArbol + " tiene " + arbol.calcularNivelArbol(arbol.getRaiz(), 0) + " niveles");
         Scanner scanner = new Scanner(System.in);
@@ -275,9 +284,9 @@ public class Menu {
                 System.out.println("La suma de elementos entre estos niveles es " + arbol.sumaNodosNiveles(nivelInferior, nivelSuperior, arbol.getRaiz(), 0));
             }
             }
-        }
+    }
 
-
+    //muestra el numero de nodos impares en un nivel
     public void totalImparesNivel(ABEnteros arbol) {
             System.out.println("El AB" + indiceArbol + " tiene " + arbol.calcularNivelArbol(arbol.getRaiz(), 0) + " niveles");
             Scanner scanner = new Scanner(System.in);
@@ -288,6 +297,6 @@ public class Menu {
             } else {
                 System.out.println("El número de nodos impares en el nivel " + nivel + " es " + arbol.totalImparesNivel(nivel, arbol.getRaiz(), 0));
             }
-        }
+    }
 }
 

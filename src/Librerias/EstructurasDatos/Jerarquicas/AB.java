@@ -11,26 +11,31 @@ public class AB<E> implements I_AB<E>
         this.raiz = null;
     }
 
+    //indica si el arbol esta vacio
     public boolean esVacio()
     {
         return this.raiz == null;
     }
 
+    //vacia el arbol
     public void vaciar()
     {
         this.raiz = null;
     }
 
+    //devuelve la raiz del arbol
     public NodoAB<E> getRaiz()
     {
         return this.raiz;
     }
 
+    //setea la raiz del arbol
     public void setRaiz(NodoAB<E> raiz)
     {
         this.raiz = raiz;
     }
 
+    //inserta un elemento en el arbol
     public void insertar(E elem)
     {
         NodoAB<E> nodo = new NodoAB<E>(elem);
@@ -44,6 +49,7 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //muestra el arbol en inorden
     public void inOrder()
     {
         if (this.raiz != null)
@@ -52,6 +58,7 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //muestra el arbol en inorden de forma inversa
     public void inOrderConverso()
     {
         if (this.raiz != null)
@@ -60,6 +67,7 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //muestra el arbol en preorden
     public void preOrder()
     {
         if (this.raiz != null)
@@ -68,6 +76,7 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //muestra el arbol en postorden
     public void postOrder()
     {
         if (this.raiz != null)
@@ -76,6 +85,7 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //inserta un elemento en el arbol
     public void insertar(E elem,  E padre, char lugar)
     {
         NodoAB<E> nodo = new NodoAB<E>(elem);
@@ -100,11 +110,13 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //busca un elemento dado en el arbol
     public NodoAB<E> buscarElemento(E elem)
     {
         return raiz.buscarElemento(elem);
     }
 
+    //elimina un elemento dado del arbol
     public void eliminar(E elem)
     {
         if (this.raiz != null)
@@ -120,11 +132,13 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //indica si un elemento dado pertenece o no al arbol de forma recursiva
     public boolean pertenece(E elem)
     {
         return raiz.buscarElemento(elem) != null;
     }
 
+    //indica si un elemento dado pertenece o no al arbol
     public boolean pertenecePorDato(int elem, NodoAB<E> nodo){
         if(nodo != null){
             if((Integer) nodo.getDato() == elem){
@@ -138,6 +152,7 @@ public class AB<E> implements I_AB<E>
 
     }
 
+    //vacia el arbol de forma recursiva
     public void vaciarModo2(NodoAB<E> padre, NodoAB<E> nodo) {
         if (nodo != null) {
             if (nodo.getIzq() != null){
@@ -158,6 +173,7 @@ public class AB<E> implements I_AB<E>
         }
     }
 
+    //devuelve en numero de niveles que tiene el arbol
     public int calcularNivelArbol(NodoAB<E> nodo, int nivel){
         int nivelIzq = 0;
         int nivelDer = 0;

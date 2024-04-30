@@ -10,6 +10,7 @@ public class ABEnteros<Integer> extends AB<Integer> implements I_ABEnteros<Integ
         super();
     }
 
+    //Comprueba que la suma de los nodos de las ramas izquierda y derecha de cada nodo sea igual
     public boolean comprobarSuma()
     {
         if (this.raiz != null)
@@ -19,6 +20,7 @@ public class ABEnteros<Integer> extends AB<Integer> implements I_ABEnteros<Integ
         return true;
     }
 
+    //Muestra los nodos que son ascendientes de un elemento
     public void mostrarAscendientes(int elem, NodoAB<Integer> nodo, NodoAB<Integer> padre){
 
         if((int) this.getRaiz().getDato() != elem){
@@ -46,6 +48,7 @@ public class ABEnteros<Integer> extends AB<Integer> implements I_ABEnteros<Integ
         }
     }
 
+    //devuelve la sume de los nodos entre dos niveles dados
     public int sumaNodosNiveles(int nivelInferior, int nivelSuperior, NodoAB<Integer> nodo, int nivel){
         int suma = 0;
         if(nodo != null){
@@ -59,6 +62,7 @@ public class ABEnteros<Integer> extends AB<Integer> implements I_ABEnteros<Integ
 
     }
 
+    //devuelve la cantidad de nodos impares en un nivel dado
     public int totalImparesNivel(int nivel, NodoAB<Integer> nodo, int nivelActual){
         int suma = 0;
         if(nodo != null){

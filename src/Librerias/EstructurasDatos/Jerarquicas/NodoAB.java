@@ -256,7 +256,7 @@ public class NodoAB<E>
         }
     }
 
-    //comprueba que la clave del nodo sea mayor que la de sus hijos
+    //comprueba que la clave del nodo sea menor que la de sus hijos
     public boolean comprobarClavePequeña(NodoAB<E> nodo){
         boolean clavePequeña = false;
         if(nodo != null){

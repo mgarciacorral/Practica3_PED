@@ -48,7 +48,7 @@ public class ABEnteros<Integer> extends AB<Integer> implements I_ABEnteros<Integ
         }
     }
 
-    //devuelve la sume de los nodos entre dos niveles dados
+    //devuelve la suma de los nodos entre dos niveles dados
     public int sumaNodosNiveles(int nivelInferior, int nivelSuperior, NodoAB<Integer> nodo, int nivel){
         int suma = 0;
         if(nodo != null){
